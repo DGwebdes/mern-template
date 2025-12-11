@@ -1,6 +1,6 @@
 import app from "./app";
+import { config } from "./config/config";
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`First wheel app listening at http://localhost:${port}`);
+app.listen(config.port, () => {
+  console.log(`First wheel app listening at http://localhost:${config.port}`);
 });

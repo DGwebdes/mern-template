@@ -1,11 +1,13 @@
 import express from "express";
+import router from "./routes/itemRoutes";
+import { errorHandler } from "./middleware/errorHandler";
+
 const app = express();
+app.use(express.json());
 
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
+app.use("/api/items", router);
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-app.use(express.static(path.join(__dirname, "../dist")));
+app.use(errorHandler);
+
 
 export default app;
