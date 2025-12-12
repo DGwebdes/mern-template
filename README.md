@@ -1,4 +1,2 @@
-# New Idein
-
-## For now a simple MERN Template.
+# For now a simple MERN Template.
 

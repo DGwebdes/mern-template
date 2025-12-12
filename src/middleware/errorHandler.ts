@@ -25,3 +25,9 @@ export const errorHandler = (
   };
   res.status(err.status || 500).json(response);
 };
+
+export const morganStream = {
+  write: (message: string) => {
+    logger.http(message.trim());
+  },
+};
