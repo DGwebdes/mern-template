@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
 import { DBConfig } from "./config";
+import { logger } from "../middleware/logger";
 
 export async function connectDB() {
   try {
     await mongoose.connect(DBConfig.uri);
-    console.log("MongoDB Connected");
+    logger.info("MongoDB Connected");
   } catch (error) {
-    console.error("MongoDB Failed to Connect, error:", error);
+    logger.error("MongoDB Failed to Connect, error:", error);
     throw error;
   }
 }
