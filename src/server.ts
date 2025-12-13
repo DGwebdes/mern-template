@@ -3,6 +3,7 @@ import app from "./app";
 import { config } from "./config/config";
 import { connectDB } from "./config/database";
 import { logger } from "./middleware/logger";
+import { User } from "./models/Users";
 
 async function start() {
   try {
@@ -14,6 +15,7 @@ async function start() {
       );
       logger.info(`Environment: ${config.nodeEnv}`);
     });
+
   } catch (error) {
     logger.error("Failed to start the server", error);
     process.exit(1);
