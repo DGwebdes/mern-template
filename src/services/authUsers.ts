@@ -1,8 +1,9 @@
 import bcrypt from "bcrypt";
-import { genAccessToken, genRefreshToken } from "../utils/tokens";
+import { genAccessToken, genRefreshToken, verifyToken } from "../utils/tokens";
 import { User } from "../models/Users";
 import type { TUserToken } from "../utils/types";
 import { logger } from "../middleware/logger";
+import { JWTConfig } from "../config/config";
 
 async function login(
     email: string,
@@ -10,11 +11,12 @@ async function login(
 ): Promise<{ user: any; token: string; refresh: string }> {
     try {
         const user = await User.findOne({ email }).select("+password");
+
         if (!user) {
             throw new Error("User not found");
         }
 
-        const isMatch = bcrypt.compare(password, user.password);
+        const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             throw new Error("incorrect password");
         }
@@ -64,6 +66,19 @@ async function register(
     }
 }
 
+async function refreshAccessToken(refreshToken: string) {
+    const decoded = verifyToken(refreshToken, JWTConfig.refreshSecret);
+    const userID = typeof decoded === "string" ? decoded : decoded.userId;
+    const user = await User.findOne({ _id: userID });
+    if (!user) throw new Error("No user found");
+
+    const newAccessToken = genAccessToken({
+        _id: user._id.toString(),
+        email: user.email,
+    });
+    return { token: newAccessToken };
+}
+
 function getTokens(user: TUserToken) {
     const token = genAccessToken(user);
     const refresh = genRefreshToken(user);
@@ -71,4 +86,4 @@ function getTokens(user: TUserToken) {
     return { token, refresh };
 }
 
-export { login, register };
+export { login, register, refreshAccessToken };

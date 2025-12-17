@@ -13,5 +13,7 @@ export const registerSchema = z
     });
 export const loginSchema = z.object({
     email: z.email("Wrong credentials"),
-    password: z.string().min(1, "Missing credentials"),
+    password: z
+        .string("Missing credentials")
+        .min(12, "Password must be at least 12 characters"),
 });

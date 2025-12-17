@@ -34,4 +34,5 @@ function verifyToken(token: string, secret: string): JwtPayload | string {
   }
 }
 
+
 export { genAccessToken, genRefreshToken, verifyToken };

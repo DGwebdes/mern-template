@@ -4,6 +4,7 @@ import helmet from "helmet";
 import authRoutes from "./routes/authRoutes";
 import { errorHandler, morganStream } from "./middleware/errorHandler";
 import morgan from "morgan";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 //Routes
 app.use("/api/auth", authRoutes);
