@@ -1,15 +1,19 @@
 # Basic MERN / Typescript:
+A MongoDB, Node/expressjs template. Using MVC model.
+
+Pre-made:
+- database integration and initialization.
+- Authentication system
+- Custom Error logging
+- User Schema
+- Input Validation
 
 ## Integrations
-
-Database
-- MongoDB
-
-Configurations
 - Winston 
 - Morgan
-- auth Middleware
-- JWT access tokens
+- Mongoose
+- Zod
+- JWT
 
 ## API can now:
 
