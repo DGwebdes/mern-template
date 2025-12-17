@@ -18,7 +18,7 @@ function genAccessToken(user: TUserToken): string {
     return token;
 }
 function genRefreshToken(user: TUserToken) {
-  const payload = user._id;
+  const payload = { userId: user._id };
   const refresh = jwt.sign(payload, JWTConfig.refreshSecret, {
     expiresIn: JWTConfig.refreshExpiry,
   } as jwt.SignOptions);

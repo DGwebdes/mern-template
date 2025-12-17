@@ -23,7 +23,11 @@ async function login(
             _id: user._id.toString(),
             email: user.email,
         });
-        return { user, token, refresh };
+        return {
+            user: { _id: user._id.toString(), email: user.email },
+            token,
+            refresh,
+        };
     } catch (error) {
         logger.error(error);
         throw error;
@@ -45,7 +49,15 @@ async function register(
             _id: user._id.toString(),
             email: user.email,
         });
-        return { user, token, refresh };
+        return {
+            user: {
+                _id: user._id.toString(),
+                username: user.username,
+                email: user.email,
+            },
+            token,
+            refresh,
+        };
     } catch (error) {
         logger.error(error);
         throw error;

@@ -14,6 +14,7 @@ async function registerController(
             validRegister.email,
             validRegister.password
         );
+
         res.status(200).json(user);
     } catch (error) {
         next(error);

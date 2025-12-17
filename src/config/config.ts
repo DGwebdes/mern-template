@@ -19,10 +19,11 @@ if (!process.env.MONGO_URI) {
 }
 
 //token configuration
-
+const short = 15;
+const long = 7;
 export const JWTConfig: TJWTConfig = {
     accessSecret: process.env.JWT_ACCESS!,
     refreshSecret: process.env.JWT_REFRESH!,
-    accessExpiry: "15 minutes",
-    refreshExpiry: "7 days",
+    accessExpiry: `${short}min`,
+    refreshExpiry: `${long}days`,
 };

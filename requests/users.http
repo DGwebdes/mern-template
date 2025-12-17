@@ -1,0 +1,19 @@
+# POST http://localhost:3000/api/auth/register
+# content-type: application/json
+
+# {
+#     "username": "gptgpt",
+#     "email": "gpt@mail.com",
+#     "password": "123456789wasd",
+#     "passConfirm": "123456789wasd"
+# }
+
+
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "gpt@mail.com",
+    "password": "123456789wasd"
+}

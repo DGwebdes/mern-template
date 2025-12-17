@@ -34,8 +34,8 @@ const userSchema = new mongoose.Schema<UserDoc>(
 
 const HASH_NORMAL = 14;
 userSchema.pre("save", async function () {
-  if (!this.isModified("password")) return;
-  this.password = await bcrypt.hash(this.password, HASH_NORMAL);
+    if (!this.isModified("password")) return;
+    this.password = await bcrypt.hash(this.password, HASH_NORMAL);
 });
 
 export const User = mongoose.model<UserDoc>("User", userSchema);
