@@ -1,27 +1,21 @@
 import jwt, { type JwtPayload } from "jsonwebtoken";
 import { JWTConfig } from "../config/config";
-
-type TUserToken = {
-  _id: string;
-  email: string;
-  role: string;
-};
+import type { TUserToken } from "./types";
 
 function genAccessToken(user: TUserToken): string {
-  const payload = {
-    userId: user._id,
-    email: user.email,
-    role: user.role,
-  };
-  const secret = JWTConfig.accessSecret;
-  const options = {
-    algorithm: "HS256",
-    expiresIn: JWTConfig.accessExpiry,
-  };
+    const payload = {
+        userId: user._id,
+        email: user.email,
+    };
+    const secret = JWTConfig.accessSecret;
+    const options = {
+        algorithm: "HS256",
+        expiresIn: JWTConfig.accessExpiry,
+    };
 
-  const token = jwt.sign(payload, secret, options as jwt.SignOptions);
+    const token = jwt.sign(payload, secret, options as jwt.SignOptions);
 
-  return token;
+    return token;
 }
 function genRefreshToken(user: TUserToken) {
   const payload = user._id;

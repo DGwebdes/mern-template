@@ -2,34 +2,34 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
 interface UserDoc extends mongoose.Document {
-  name: string;
-  email: string;
-  password: string;
-  role?: "admin" | "user" | "guest";
-  createdAt: Date;
-  updatedAt: Date;
+    username: string;
+    email: string;
+    password: string;
+    role?: "admin" | "user" | "guest";
+    createdAt: Date;
+    updatedAt: Date;
 }
 
 const userSchema = new mongoose.Schema<UserDoc>(
-  {
-    name: { type: String, required: true },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      index: true,
-      lowercase: true,
-      trim: true,
+    {
+        username: { type: String, required: true },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            index: true,
+            lowercase: true,
+            trim: true,
+        },
+        password: { type: String, required: true, select: false },
+        role: {
+            type: String,
+            required: true,
+            enum: ["admin", "user", "guest"],
+            default: "user",
+        },
     },
-    password: { type: String, required: true, select: false },
-    role: {
-      type: String,
-      required: true,
-      enum: ["admin", "user", "guest"],
-      default: "user",
-    },
-  },
-  { timestamps: true }
+    { timestamps: true }
 );
 
 const HASH_NORMAL = 14;
