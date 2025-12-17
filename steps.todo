@@ -13,14 +13,14 @@ Key Concepts: Project initialization, middleware chain, environment management
 
 Phase 2: Authentication System (Days 3-5)
 
- Design User model (email, password, roles, profile)
- Implement password hashing with bcrypt
- Build registration endpoint with validation
- Create login with JWT access & refresh tokens
- Build email verification flow
- Implement password reset functionality
- Create auth middleware for protected routes
- Add logout and token refresh endpoints
+ [x] Design User model (email, password, roles, profile)
+ [x] Implement password hashing with bcrypt
+ [x] Build registration endpoint with validation
+ [x] Create login with JWT access & refresh tokens
+ [] Build email verification flow
+ [] Implement password reset functionality
+ [] Create auth middleware for protected routes
+ [x] Add logout and token refresh endpoints
 
 Key Concepts: JWT authentication, password security, token management, email verification
 

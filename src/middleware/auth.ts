@@ -24,8 +24,8 @@ function authMiddleware(req: Request, res: Response, next: NextFunction) {
         req.user = decoded;
         next();
     } catch (error) {
-        // const expired = error.name === "TokenExpiredError";
-        // const message = expired ? "Token Expired" : "Invalid Token";
         res.status(403).json({ message: "Expired or Invalid token " });
     }
 }
+
+export { authMiddleware };
