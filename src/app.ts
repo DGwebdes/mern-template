@@ -5,6 +5,7 @@ import authRoutes from "./routes/authRoutes";
 import { errorHandler, morganStream } from "./middleware/errorHandler";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
+import userRoutes from "./routes/userRoutes";
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(cookieParser());
 
 //Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/users/", userRoutes);
 
 //Health checks and Error handlers
 app.get("/health", (req, res) => res.json({ status: "ok" }));

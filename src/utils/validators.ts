@@ -17,3 +17,26 @@ export const loginSchema = z.object({
         .string("Missing credentials")
         .min(12, "Password must be at least 12 characters"),
 });
+export const updateProfileSchema = z
+    .object({
+        username: z.string().min(6).optional(),
+        email: z.email(),
+    })
+    .refine((data) => data.username || data.email, {
+        message: "At least one field must provided",
+    });
+
+export const changePasswordSchema = z
+    .object({
+        oldPassword: z.string().min(12),
+        newPass: z.string().min(12, "Password must be at least 12 characters"),
+        newPassConfirm: z.string().min(1),
+    })
+    .refine((data) => data.newPass === data.newPassConfirm, {
+        message: "Passwords do not match",
+        path: ["newPassConfirm"],
+    })
+    .refine((data) => data.newPass !== data.oldPassword, {
+        message: "New password cannot be equal to current password",
+        path: ["newPass"],
+    });

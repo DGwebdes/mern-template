@@ -1,0 +1,4 @@
+GET http://localhost:3000/api/auth/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQ5ZGQwZDU1YmE3MzU5ZjYxODZlMGMiLCJlbWFpbCI6ImdwdDVAbWFpbC5jb20iLCJpYXQiOjE3NjY0NDgzOTgsImV4cCI6MTc2NjQ0OTI5OH0.Z-TAcDq9VRRWPbwOPjWdbyyL_WCXt3r1_hfhr0MNd6A
+
+# GET http://localhost:3000/health

@@ -1,34 +1,25 @@
-# REGISTER ENDPOINT
-# POST http://localhost:3000/api/auth/register
-# content-type: application/json
 
-# {
-#     "username": "anotherGPT",
-#     "email": "gpt5@mail.com",
-#     "password": "passwordlong",
-#     "passConfirm": "passwordlong"
-# }
+GET http://localhost:3000/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQ5ZGQwZDU1YmE3MzU5ZjYxODZlMGMiLCJlbWFpbCI6ImdwdDVAbWFpbC5jb20iLCJpYXQiOjE3NjY0NTAzODYsImV4cCI6MTc2NjQ1MTI4Nn0.pBX4zAvDsOvAzyq3g5SH3VrJMKxYwHdjzy4jyKasIq8
 
-# LOGIN ENDPOINT
-# POST http://localhost:3000/api/auth/login
+# PATCH http://localhost:3000/api/users/me 
 # Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQyZmEwY2RjZWJiYmFlN2M4NzZjZjEiLCJlbWFpbCI6ImdwdDVAbWFpbC5jb20iLCJpYXQiOjE3NjY0NDYzNzAsImV4cCI6MTc2NjQ0NzI3MH0.7HOVNDzMuqz_QwxK8gLbLzWpHI8Mx3jF3DksSHsin3k
 
 # {
-#     "email": "gpt5@mail.com",
-#     "password": "passwordlong"
+#     "username" : "CHANGED",
+#     "email": "gpt5@mail.com"
 # }
 
-# LOGOUT ENDPOINT
-# GET http://localhost:3000/api/auth/logout
-
-# TOKEN REFRESH ENDPOINT
-# POST http://localhost:3000/api/auth/refresh HTTP/1.1
-# Content-Type: : application/json
+# PATCH http://localhost:3000/api/users/changepass
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQ5ZGQwZDU1YmE3MzU5ZjYxODZlMGMiLCJlbWFpbCI6ImdwdDVAbWFpbC5jb20iLCJpYXQiOjE3NjY0NTAzODYsImV4cCI6MTc2NjQ1MTI4Nn0.pBX4zAvDsOvAzyq3g5SH3VrJMKxYwHdjzy4jyKasIq8
 
 # {
-#     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQyZmEwY2RjZWJiYmFlN2M4NzZjZjEiLCJpYXQiOjE3NjYwMDI4OTgsImV4cCI6MTc2NjYwNzY5OH0.ZH6GYyUieOWwtZIemfQQbUdBsl8tsZ7sjBOdQeJ6K3I"
+#     "oldPassword": "passwordlong",
+#     "newPass": "aloaloaloaloalo",
+#     "newPassConfirm" : "aloaloaloaloalo"
 # }
 
-# TEST ENDPOINT
-GET http://localhost:3000/api/auth/test
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQyZmEwY2RjZWJiYmFlN2M4NzZjZjEiLCJlbWFpbCI6ImdwdDVAbWFpbC5jb20iLCJpYXQiOjE3NjYwMTAyNTUsImV4cCI6MTc2NjAxMTE1NX0.cwL7NC9h4Fbr2lBpUT1zGK6VcG7u-GfqCIg9VpPAT94
+# DELETE http://localhost:3000/api/users/me
+# Authorization: Bearer 
