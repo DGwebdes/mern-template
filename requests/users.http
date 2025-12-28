@@ -1,24 +1,24 @@
 
 GET http://localhost:3000/api/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQ5ZGQwZDU1YmE3MzU5ZjYxODZlMGMiLCJlbWFpbCI6ImdwdDVAbWFpbC5jb20iLCJpYXQiOjE3NjY0NTAzODYsImV4cCI6MTc2NjQ1MTI4Nn0.pBX4zAvDsOvAzyq3g5SH3VrJMKxYwHdjzy4jyKasIq8
+Authorization: Bearer TOKEN
 
 # PATCH http://localhost:3000/api/users/me 
 # Content-Type: application/json
-# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQyZmEwY2RjZWJiYmFlN2M4NzZjZjEiLCJlbWFpbCI6ImdwdDVAbWFpbC5jb20iLCJpYXQiOjE3NjY0NDYzNzAsImV4cCI6MTc2NjQ0NzI3MH0.7HOVNDzMuqz_QwxK8gLbLzWpHI8Mx3jF3DksSHsin3k
+# Authorization: Bearer TOKEN
 
 # {
 #     "username" : "CHANGED",
-#     "email": "gpt5@mail.com"
+#     "email": "EMAIL@mail.com"
 # }
 
 # PATCH http://localhost:3000/api/users/changepass
 # Content-Type: application/json
-# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQ5ZGQwZDU1YmE3MzU5ZjYxODZlMGMiLCJlbWFpbCI6ImdwdDVAbWFpbC5jb20iLCJpYXQiOjE3NjY0NTAzODYsImV4cCI6MTc2NjQ1MTI4Nn0.pBX4zAvDsOvAzyq3g5SH3VrJMKxYwHdjzy4jyKasIq8
+# Authorization: Bearer TOKEN
 
 # {
 #     "oldPassword": "passwordlong",
-#     "newPass": "aloaloaloaloalo",
-#     "newPassConfirm" : "aloaloaloaloalo"
+#     "newPass": "NEWLONGPASSWORD",
+#     "newPassConfirm" : "NEWLONGPASSWORD"
 # }
 
 # DELETE http://localhost:3000/api/users/me
