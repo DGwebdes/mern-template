@@ -3,8 +3,8 @@
 # content-type: application/json
 
 # {
-#     "username": "anotherGPT",
-#     "email": "gpt5@mail.com",
+#     "username": "USERNAME",
+#     "email": "EMAIL@EMAIL.COM",
 #     "password": "passwordlong",
 #     "passConfirm": "passwordlong"
 # }
@@ -14,7 +14,7 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "gpt5@mail.com",
+    "email": "EMAIL@mail.com",
     "password": "aloaloaloaloalo"
 }
 
@@ -26,5 +26,5 @@ Content-Type: application/json
 # Content-Type: : application/json
 
 # {
-#     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQyZmEwY2RjZWJiYmFlN2M4NzZjZjEiLCJpYXQiOjE3NjYwMDI4OTgsImV4cCI6MTc2NjYwNzY5OH0.ZH6GYyUieOWwtZIemfQQbUdBsl8tsZ7sjBOdQeJ6K3I"
+#     "refreshToken": "TOKEN"
 # }
